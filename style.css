@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-:root{
+
+:root {
     --orange: rgb(229, 138, 60);
     --blue: rgb(23, 41, 68);
+    --full-box-shadow: var(--orange) 0px 1px 0px, var(--orange) 1px 0px 0px, var(--orange) 0px -1px 0px, var(--orange) -1px 0px 0px;
+    --full-box-shadow-valid: green 0px 1px 0px, green 1px 0px 0px, green 0px -1px 0px, green -1px 0px 0px;
+    --full-box-shadow-invalid: red 0px 1px 0px, red 1px 0px 0px, red 0px -1px 0px, red -1px 0px 0px;
 }
+
 body {
     display: flex;
     height: 100vh;
@@ -42,6 +47,12 @@ body {
 
 /* RIGHT CONTAINER */
 
+div.input-left div,
+div.input-right div {
+    position: relative;
+
+}
+
 .main-container-right {
     display: flex;
     flex-direction: column;
@@ -59,6 +70,7 @@ body {
     height: 33%;
     padding: 36px;
     display: flex;
+
 }
 
 .first-container {
@@ -66,18 +78,20 @@ body {
     font-size: 30px;
 }
 
-.second-container{
- display: flex;
- flex-direction: column;
+.second-container {
+    display: flex;
+    flex-direction: column;
 }
 
 .input-container {
     display: flex;
+
 }
+
 .second-container-info-text {
     width: 100%;
     font-size: 30px;
-   margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .input-left,
@@ -92,26 +106,131 @@ label {
     display: block;
     font-size: 24px;
     margin-bottom: 6px;
+    transform: scale(1) translate(0, 35px);
+    transition: ease 0.15s;
+    cursor: text;
 }
 
-input{
+.check-mark,
+.x-mark {
+    visibility: hidden;
+    position: absolute;
+    right: 110px;
+    top: 40px;
+}
+
+.check-mark {
+    color: green;
+}
+
+.x-mark {
+    color: red;
+}
+
+input {
     background-color: var(--blue);
     box-shadow: var(--orange) 0px 1px 0px;
     height: 2rem;
     width: 300px;
-    /* appearance: none; */
-    border-radius: 6px;
-    /* border-color: transparent; */
     border: none;
     color: white;
-    font-size: 18px;
     padding: 4px 10px;
-    transition: ease 0.1s;
+    transition: ease 0.15s;
+    margin-bottom: 8px;
+    font-size: 18px;
 }
+
+::placeholder {
+    visibility: hidden;
+}
+
+
 
 input:focus {
     outline: none;
-    border: 10px solid var(--bg-orange);
-    box-shadow: var(--orange) 0px 1px 0px, var(--orange) 1px 0px 0px, var(--orange) 0px -1px 0px, var(--orange) -1px 0px 0px;
+    border-radius: 25px;
+    box-shadow: var(--full-box-shadow);
+
 }
 
+div:focus-within>label {
+    transform: scale(1);
+}
+
+label:has(~ input:not(:placeholder-shown)) {
+    transform: scale(1);
+}
+
+/* NEUTRAL INPUT */
+
+input:valid:placeholder-shown {
+    box-shadow: var(--orange) 0px 1px 0px;
+}
+
+input:focus:valid:placeholder-shown {
+    box-shadow: var(--full-box-shadow);
+
+}
+
+/* VALID INPUT */
+input:valid {
+    box-shadow: green 0px 1px 0px;
+}
+
+input:valid:not(:placeholder-shown)~.check-mark {
+    visibility: visible;
+}
+
+input:valid:focus {
+    box-shadow: var(--full-box-shadow-valid);
+}
+
+
+
+/*INVALID INPUT */
+
+input:invalid {
+    box-shadow: red 0px 1px 0px;
+}
+
+input:invalid:not(:placeholder-shown)~.x-mark {
+    visibility: visible;
+}
+
+input:invalid:focus {
+    box-shadow: var(--full-box-shadow-invalid);
+}
+
+/*THIRD CONTAINER */
+
+.third-container{
+    flex-direction: column;
+    gap: 20px;
+}
+
+button {
+    width: 320px;
+    height: 78px;
+    border-radius: 0;
+    font-size: 18px;
+    border-radius: 25px;
+    background-color: var(--blue);
+    border: none;
+    color: var(--orange);
+    box-shadow: var(--full-box-shadow);
+    font-weight: 800;
+    cursor: pointer;
+    transition: ease 0.15s;
+}
+
+button:hover {
+    background-color: var(--orange);
+    color: var(--blue);
+    box-shadow: none;
+}
+
+a {
+    color: var(--orange);
+    font-weight: 600;
+    text-decoration: none;
+}
