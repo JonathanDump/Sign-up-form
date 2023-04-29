@@ -21,8 +21,7 @@
     <div class="main-container-right">
         <form action="" method="POST" class="form">
             <div class="first-container">
-                <div class="first-cont-info-text">This is not a real online service! Lorem ipsum dolor sit amet
-                    consectetur, adipisicing elit. Necessitatibus, commodi!
+                <div class="first-cont-info-text">This is not a real online service!
 
                     <br> Sign up <i>now</i> to get started. <br><br>
 
@@ -32,44 +31,64 @@
             <div class="second-container">
                 <div class="second-container-info-text">Let's do it!</div>
                 <div class="input-container">
-                <div class="input-left">
-                    <div class="user-name">
-                        <label for="user-name">Name</label>
-                        <input type="text" name="user-name" id="user-name" placeholder="Name" >
-                        <span class="check-mark">✔</span>
+                    <div class="input-left">
+                        <div class="user-name">
+                            <label for="user-name">Name</label>
+                            <input type="text" name="user-name" id="user-name" placeholder="Name">
+                            <span class="check-mark">✔</span>
+                        </div>
+                        <div class="user-email">
+                            <label for="user-email">Email</label>
+                            <input type="email" name="user-email" id="user-email" placeholder="Email">
+                            <span class="check-mark">✔</span>
+                            <span class="x-mark">𐄂</span>
+                        </div>
+                        <div class="user-password">
+                            <label for="user-password">Password*</label>
+                            <input type="password" name="user-password" id="user-password" placeholder="Password"
+                                required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$">
+                            <span class="check-mark">✔</span>
+                            <span class="x-mark">𐄂</span>
+                            <div id="password-checker">
+                                <div class="check1"> 
+                                    <span class="check-check-mark">✔</span>
+                                    <span class="check-x-mark">𐄂</span>
+                                    Minimum 8 characters
+                                </div>
+                                <div class="check2">
+                                    <span class="check-check-mark">✔</span>
+                                    <span class="check-x-mark">𐄂</span>
+                                    At least one letter
+                                </div>
+                                <div class="check3">
+                                    <span class="check-check-mark">✔</span>
+                                    <span class="check-x-mark">𐄂</span>
+                                    At least one number
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="user-email">
-                        <label for="user-email">Email</label>
-                        <input type="email" name="user-email" id="user-email" placeholder="Email">
-                        <span class="check-mark">✔</span>
-                        <span class="x-mark">𐄂</span>
-                    </div>
-                    <div class="user-password">
-                        <label for="user-password">Password*</label>
-                        <input type="password" name="user-password" id="user-password" placeholder="Password" required>
-                        <span class="check-mark">✔</span>
-                        <span class="x-mark">𐄂</span>
+                    <div class="input-right">
+                        <div class="user-last-name">
+                            <label for="user-last-name">Last name</label>
+                            <input type="text" name="user-last-name" id="user-last-name" placeholder="Last name">
+                            <span class="check-mark">✔</span>
+                        </div>
+                        <div class="user-phone-number">
+                            <label for="user-phone-number">Phone number</label>
+                            <input type="tel" name="user-phone-number" id="user-phone-number"
+                                placeholder="Phone number">
+                            <span class="check-mark">✔</span>
+                        </div>
+                        <div class="user-confirm-password">
+                            <label for="user-confirm-password">Confirm password*</label>
+                            <input type="password" name="user-confirm-password" id="user-confirm-password"
+                                placeholder="Confirm password" required>
+                            <span class="check-mark">✔</span>
+                            <span class="x-mark">𐄂</span>
+                        </div>
                     </div>
                 </div>
-                <div class="input-right">
-                    <div class="user-last-name">
-                        <label for="user-last-name">Last name</label>
-                        <input type="text" name="user-last-name" id="user-last-name" placeholder="Last name">
-                        <span class="check-mark">✔</span>
-                    </div>
-                    <div class="user-phone-number">
-                        <label for="user-phone-number">Phone number</label>
-                        <input type="tel" name="user-phone-number" id="user-phone-number" placeholder="Phone number">
-                        <span class="check-mark">✔</span>
-                    </div>
-                    <div class="user-confirm-password">
-                        <label for="user-confirm-password">Confirm password*</label>
-                        <input type="password" name="user-confirm-password" id="user-confirm-password" placeholder="Confirm password" required>
-                        <span class="check-mark">✔</span>
-                        <span class="x-mark">𐄂</span>
-                    </div>
-                </div>
-            </div>
             </div>
             <div class="third-container">
                 <div class="btn-container">
